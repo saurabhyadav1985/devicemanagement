@@ -18,4 +18,8 @@ public class Device {
 
     private LocalDateTime creationTime;
 
+    @PrePersist
+    public void prePersist() {
+        creationTime = LocalDateTime.now();
+    }
 }

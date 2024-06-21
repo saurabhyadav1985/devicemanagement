@@ -10,7 +10,7 @@ Sure, here are the `curl` commands for each of the API endpoints in your `Device
 1. Add a new device (POST /devices):
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"brand":"BrandName", "model":"ModelName"}' http://localhost:8080/devices
+curl -X POST -H "Content-Type: application/json" -d '{"brand":"BrandName", "name":"ModelName"}' http://localhost:8080/devices
 ```
 
 Replace `"BrandName"` and `"ModelName"` with the actual brand and model of the device.
@@ -32,7 +32,7 @@ curl -X GET http://localhost:8080/devices
 4. Update a device (PUT /devices):
 
 ```bash
-curl -X PUT -H "Content-Type: application/json" -d '{"id":1, "brand":"NewBrandName", "model":"NewModelName"}' http://localhost:8080/devices
+curl -X PUT -H "Content-Type: application/json" -d '{"id":1, "brand":"NewBrandName", "name":"BerlinModel"}' http://localhost:8080/devices
 ```
 
 Replace `1`, `"NewBrandName"`, and `"NewModelName"` with the actual ID, new brand, and new model of the device.
