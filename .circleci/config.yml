@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/circleci/device-management-app
     docker:
-      - image: circleci/openjdk:11-stretch
+      - image: circleci/openjdk:17-stretch
     steps:
       - checkout
       - restore_cache:
