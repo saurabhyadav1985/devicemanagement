@@ -1,5 +1,5 @@
 # Device Management
-Device management service for acme (dummy firm). this is a device management application that allows you to add, retrieve, update, delete, and search for devices. It is a typical demo of a Spring Boot application with a RESTful API and an in-memory database.
+Device management service for acme (dummy firm). This is a device management application that allows you to add, retrieve, update, delete, and search for devices. It is a typical demo of a Spring Boot application with a RESTful API and an in-memory database.
 
 # Setup 
 To start the application, you need to follow these steps:
