@@ -1,9 +1,7 @@
-package org.acme.devicemgmt;
+package org.acme.devicemgmt.model;
 
-import org.acme.devicemgmt.model.Device;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.testcontainers.containers.PostgreSQLContainer;
@@ -28,7 +26,7 @@ public class DeviceTest {
     private TestEntityManager entityManager;
 
     @Test
-    public void testDeviceCreation() {
+    void testDeviceCreation() {
         Device device = new Device();
         device.setName("Test Device");
         device.setBrand("Test Brand");
@@ -44,5 +42,22 @@ public class DeviceTest {
         assertThat(foundDevice.getName()).isEqualTo(device.getName());
     }
 
+
+    @Test
+    void testPrePersist() {
+        // create a new device and check whether the creation time is set
+        Device device = new Device();
+        device.setName("Test Device");
+        device.setBrand("Test Brand");
+
+        // Persist the device
+        entityManager.persist(device);
+
+        // Retrieve the device
+        Device foundDevice = entityManager.find(Device.class, device.getId());
+
+        // Assert that the creation time is set
+        assertThat(foundDevice.getCreationTime()).isNotNull();
+    }
 
 }
