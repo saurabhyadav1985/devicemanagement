@@ -43,7 +43,7 @@ docker run -p 8080:8080 device-management-app:latest
 ## H2 UI
 Access the H2 Database UI at: http://localhost:8080/h2-console
 
-## API
+## Device Management API
 
 Here are the `curl` commands for each of the API endpoints in your `DeviceController`:
 
