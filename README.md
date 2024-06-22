@@ -25,15 +25,20 @@ Please note that these instructions assume that you have Maven and Java installe
 4. **Build the Docker image**: After the build is successful, you can build your Docker image. 
 
 Make sure your Dockerfile is in the root directory of your project and DeviceManagement binary is generated in target directory. Run the following command to build your Docker image:
-
+```bash
 docker build -t device-management-app .
+````
 
 5. **Push the Docker image to Docker Hub**: After the build is successful, you can push your Docker image to Docker Hub.
+```bash
 docker tag device-management-app:latest yourusername/device-management-app:latest
 docker push yourusername/device-management-app:latest
+```
 
 6. **Run the Docker image**: After the push is successful, you can run your Docker image.
+```bash
 docker run -p 8080:8080 device-management-app:latest
+```
 
 ## H2 UI
 Access the H2 Database UI at: http://localhost:8080/h2-console
