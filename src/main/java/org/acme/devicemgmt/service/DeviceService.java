@@ -1,15 +1,16 @@
 package org.acme.devicemgmt.service;
 
+import lombok.AllArgsConstructor;
 import org.acme.devicemgmt.model.Device;
 import org.acme.devicemgmt.repository.DeviceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class DeviceService {
-    @Autowired
+
     private DeviceRepository deviceRepository;
 
     public Device addDevice(Device device) {

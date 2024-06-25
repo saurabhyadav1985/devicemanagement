@@ -1,22 +1,25 @@
 package org.acme.devicemgmt.model;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private String name;
+    String name;
 
-    private String brand;
+    String brand;
 
-    private LocalDateTime creationTime;
+    LocalDateTime creationTime;
 
     @PrePersist
     public void prePersist() {

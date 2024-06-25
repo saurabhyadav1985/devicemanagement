@@ -12,8 +12,6 @@ public class ApiError {
         this.message = message;
     }
 
-    // getters and setters
-
     public HttpStatus getStatus() {
         return status;
     }
