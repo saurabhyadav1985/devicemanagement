@@ -48,7 +48,7 @@ class DeviceControllerTest {
         mockMvc.perform(post("/devices")
                        .contentType(MediaType.APPLICATION_JSON)
                        .content(asJsonString(device)))
-               .andExpect(status().isCreated())
+               .andExpect(status().isOk())
                .andExpect(jsonPath("$.brand", Matchers.is("Apple")))
                .andExpect(jsonPath("$.name", Matchers.is("iPhone 12")));
     }

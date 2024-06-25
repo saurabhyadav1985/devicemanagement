@@ -16,9 +16,8 @@ public class DeviceController {
     private DeviceService deviceService;
 
     @PostMapping
-    public ResponseEntity<Device> addDevice(@RequestBody Device device) {
-        Device createdDevice = deviceService.addDevice(device);
-        return new ResponseEntity<>(createdDevice, HttpStatus.CREATED);
+    public Device addDevice(@RequestBody Device device) {
+        return deviceService.addDevice(device);
     }
 
     @GetMapping("/{id}")
